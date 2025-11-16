@@ -1,5 +1,6 @@
 import Generator
 import argparse
+import Validator
 
 if __name__ == '__main__':
 
@@ -10,3 +11,4 @@ if __name__ == '__main__':
 
     generator = Generator.Generator(args.url)
     generator.generate()
+

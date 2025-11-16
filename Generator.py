@@ -1,4 +1,5 @@
 import qrcode
+import Validator
 
 class Generator:
     def __init__(self, url):
@@ -6,6 +7,12 @@ class Generator:
 
 
     def generate(self):
+
+        isValid = Validator.validate(self.url)
+        if not isValid:
+            print("Invalid URL")
+            return -1
+
         qr = qrcode.QRCode()
         qr.add_data(self.url)
         qr.make()
